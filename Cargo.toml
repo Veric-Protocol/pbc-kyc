@@ -1,0 +1,24 @@
+[package]
+name = "pbc-kyc-storage"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ['cdylib']
+
+[package.metadata.partisiablockchain]
+cargo-partisia = "1.28.0"
+
+[dependencies]
+pbc_contract_common = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git" }
+pbc_contract_codegen = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git" }
+pbc_traits = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git" }
+pbc_lib = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git" }
+read_write_rpc_derive = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git" }
+read_write_state_derive = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git" }
+create_type_spec_derive = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git" }
+
+serde_json = "1.0"
+
+[features]
+abi = ["pbc_contract_common/abi", "pbc_contract_codegen/abi", "pbc_traits/abi", "create_type_spec_derive/abi", "pbc_lib/abi"]
